@@ -166,12 +166,12 @@ void handleStop() {
   server.send(200, "text/plain", currentState);
 }
 void handleRightward() {
-  rightside(90);
+  rightside();
   currentState = "Moving rightside";
   server.send(200, "text/plain", currentState);
 }
 void handleLeftward() {
-  leftside(90);
+  leftside();
   currentState = "Moving leftside";
   server.send(200, "text/plain", currentState);
 }
@@ -194,8 +194,7 @@ void backward() {
   digitalWrite(IN4, LOW);
   Serial.println("Robot is going backward.");
 }
-void rightside(int turnAngle) {
-  int turntime = 4*turnAngle;
+void rightside() {
   analogWrite(ENA, carspeed);
   analogWrite(ENB, carspeed);
   digitalWrite(IN1, HIGH);
@@ -203,10 +202,8 @@ void rightside(int turnAngle) {
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
   Serial.println("Robot is going rightside.");
-  delay(turntime);
 }
-void leftside(int turnAngle) {
-  int turntime = 4*turnAngle;
+void leftside() {
   analogWrite(ENA, carspeed);
   analogWrite(ENB, carspeed);
   digitalWrite(IN1, LOW);
@@ -214,7 +211,6 @@ void leftside(int turnAngle) {
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
   Serial.println("Robot is going leftside.");
-  delay(turntime);
 }
 void stop() {
   analogWrite(ENA, 0);
