@@ -2,8 +2,7 @@
 
 1. Pratyush
 2. Sai
-3. swarc
-4. SVSK
+3. Swaroop
 
 ## Adding Rules
 1. If a temp file then add \<yourname>\<filename>
